@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
-
 import 'package:gpu_task/Profile.dart';
 
 class EditProfile extends StatefulWidget {
