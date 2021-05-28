@@ -10,10 +10,10 @@ class Profile extends StatefulWidget {
   ProfileState createState() => ProfileState();
 }
 class ProfileState extends State<Profile> {
-  Widget Img = FlutterLogo();
-  String NickName = "Nickname ";
-  String Address = "Address ";
-  String PhoneNum = "Phone Number ";
+  Widget img = FlutterLogo();
+  String nickName = "Nickname ";
+  String address = "Address ";
+  String phoneNum = "Phone Number ";
 
   @override
   Widget build(BuildContext context) {
@@ -21,38 +21,61 @@ class ProfileState extends State<Profile> {
       body: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(height: 50.0,),
+          SizedBox(height: 20.0,),
 
-          CircularProfileAvatar(
-              null,
-              borderWidth: 5.0,
-              borderColor: Color(0xff1DA1F2),
-              child: Img,
-              elevation: 5,
-              radius: 100,
+          Container(
+            margin: EdgeInsets.all(25),
+            padding:EdgeInsets.all(20),
+            child: Column(
+              children: [
+                CircularProfileAvatar(
+                    null,
+                    borderWidth: 2.5,
+                    borderColor: Color(0xffA8A8A8),
+                    child: img,
+                    elevation: 5,
+                    radius: 100,
+                  ),
+
+                SizedBox(height: 50.0,),
+
+                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [SizedBox(width: 25.0,),
+                    IconButton(icon:Icon(CupertinoIcons.qrcode,), iconSize:45.0,
+                      onPressed: () {Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => QrCode()),
+                      );
+                      },
+                    ),
+
+                    IconButton(icon:Icon(Icons.edit,), iconSize:45.0,
+                      onPressed: () {Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => EditProfile()),
+                      );
+                      },
+                    ),
+                    SizedBox(width: 25.0,),
+                  ],
+                ),
+              ],
             ),
+          ),
 
-          IconButton(icon:Icon(CupertinoIcons.qrcode,), iconSize:40.0,
-              onPressed: () {Navigator.push(context,
-              MaterialPageRoute(builder: (context) => QrCode()),
-              );
-              },
-            ),
+          Container(
+              margin: EdgeInsets.all(25),
+              padding:EdgeInsets.all(20),
+              child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Text(nickName, style:TextStyle(fontSize: 30.0,),),
+                  SizedBox(height: 75.0,),
+                  Text(address, style:TextStyle(fontSize: 30.0,),),
+                  SizedBox(height: 75.0,),
+                Text(phoneNum, style:TextStyle(fontSize: 30.0,),),
+          ],)
+          ),
 
-          Text(NickName, style:TextStyle(fontSize: 30.0,),),
+          SizedBox(height: 20.0,),
 
-          Text(Address, style:TextStyle(fontSize: 30.0,),),
-
-          Text(PhoneNum, style:TextStyle(fontSize: 30.0,),),
-
-          IconButton(icon:Icon(Icons.edit,), iconSize:40.0,
-              onPressed: () {Navigator.push(context,
-                MaterialPageRoute(builder: (context) => EditProfile()),
-              );
-              },
-            ),
-
-          SizedBox(height: 50.0,),
         ],
         ),
       ),
