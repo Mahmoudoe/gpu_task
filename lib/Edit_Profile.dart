@@ -22,20 +22,14 @@ class EditProfileState extends State<EditProfile> {
 
           SizedBox(height: 50.0,),
 
-          Column(
-            children: [
-              MaterialButton(onPressed: (){},
-                child: CircularProfileAvatar(null,
-                  child: FlutterLogo(),
-                  borderWidth: 2.5,
-                  borderColor: Color(0xffA8A8A8),
-                  elevation: 5,
-                  radius: 100,
-                ),
-              ),
-
-              //IconButton(icon:Icon(Icons.camera,), iconSize:35.0, onPressed: () {  },),
-            ],
+          MaterialButton(onPressed: (){},
+            child: CircularProfileAvatar(null,
+              child: FlutterLogo(),
+              borderWidth: 2.5,
+              borderColor: Color(0xffA8A8A8),
+              elevation: 5,
+              radius: 100,
+            ),
           ),
 
           SizedBox(height: 50.0,),
