@@ -2,12 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:gpu_task/Profile.dart';
+import 'package:image_picker/image_picker.dart';
 
 class EditProfile extends StatefulWidget {
   @override
   EditProfileState createState() => EditProfileState();
 }
 class EditProfileState extends State<EditProfile> {
+
+  //PickedFile img = ImagePicker().getImage(source: ); ;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +34,7 @@ class EditProfileState extends State<EditProfile> {
               ),
 
               IconButton(icon:Icon(Icons.camera,), iconSize:35.0,
-                onPressed: () { },
+                onPressed: () {  },
               ),
             ],
           ),

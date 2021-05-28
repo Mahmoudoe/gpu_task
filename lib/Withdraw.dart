@@ -20,6 +20,7 @@ class WithdrawState extends State<Withdraw> {
             SizedBox(height: 75.0,),
 
             TextField(style: TextStyle(color: Color(0xff000000),),
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(hintText: "Enter Amount to be Withdrawn ",
               filled: true,
               fillColor: Color(0xffA8A8A8),

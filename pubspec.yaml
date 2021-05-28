@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  image_picker: ^0.7.5+3
   qr_flutter: ^4.0.0  #For Making QR Codes
   circular_profile_avatar: ^1.0.8 #For Circular Prfile Avatar
   flutter:

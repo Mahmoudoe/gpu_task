@@ -1,16 +1,15 @@
+import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-
 import 'package:gpu_task/Profile.dart';
-
-
 
 class QrCode extends StatefulWidget {
   @override
   QrCodeState createState() => QrCodeState();
 }
 class QrCodeState extends State<QrCode> {
+  var rng = new Random();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class QrCodeState extends State<QrCode> {
                 margin: EdgeInsets.all(30),
                 padding:EdgeInsets.all(30),
                 child: QrImage(
-                  data: 'This will be our QR code',
+                  data: rng.nextInt(1000000).toString() ,
                   version: QrVersions.auto,
                   size: 300,
                   gapless: true,
