@@ -24,18 +24,17 @@ class EditProfileState extends State<EditProfile> {
 
           Column(
             children: [
-              CircularProfileAvatar(
-                null,
-                borderWidth: 5.0,
-                borderColor: Colors.blue,
-                child: FlutterLogo(),
-                elevation: 5,
-                radius: 100,
+              MaterialButton(onPressed: (){},
+                child: CircularProfileAvatar(null,
+                  child: FlutterLogo(),
+                  borderWidth: 2.5,
+                  borderColor: Color(0xffA8A8A8),
+                  elevation: 5,
+                  radius: 100,
+                ),
               ),
 
-              IconButton(icon:Icon(Icons.camera,), iconSize:35.0,
-                onPressed: () {  },
-              ),
+              //IconButton(icon:Icon(Icons.camera,), iconSize:35.0, onPressed: () {  },),
             ],
           ),
 
@@ -44,8 +43,7 @@ class EditProfileState extends State<EditProfile> {
           TextField(style: TextStyle(color: Color(0xff000000),),
             decoration: InputDecoration(hintText: "Enter Nickname ",
               filled: true,
-              fillColor: Color(0xffA8A8A8),
-              border: OutlineInputBorder(
+              fillColor: Color(0xffffffff), border:OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0),),
               ),
             ),
@@ -56,8 +54,7 @@ class EditProfileState extends State<EditProfile> {
           TextField(style: TextStyle(color: Color(0xff000000),),
             decoration: InputDecoration(hintText: "Enter Address ",
               filled: true,
-              fillColor: Colors.grey,
-              border: OutlineInputBorder(
+              fillColor: Color(0xffffffff),border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0),),
               ),
             ),
@@ -68,8 +65,7 @@ class EditProfileState extends State<EditProfile> {
           TextField(style: TextStyle(color: Color(0xff000000)),
             decoration: InputDecoration(hintText: "Enter Phone Number ",
               filled: true,
-              fillColor: Colors.grey,
-              border: OutlineInputBorder(
+              fillColor: Color(0xffffffff),border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0),),
               ),
             ),
