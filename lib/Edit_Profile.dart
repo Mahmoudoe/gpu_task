@@ -19,9 +19,7 @@ class EditProfileState extends State<EditProfile> {
       // No app bar
       body: ListView(children: [
         Column(children: [
-
           SizedBox(height: 50.0,),
-
           MaterialButton(onPressed: (){},
             child: CircularProfileAvatar(null,
               child: FlutterLogo(),
@@ -33,7 +31,6 @@ class EditProfileState extends State<EditProfile> {
           ),
 
           SizedBox(height: 50.0,),
-
           TextField(style: TextStyle(color: Color(0xff000000),),
             decoration: InputDecoration(hintText: "Enter Nickname ",
               filled: true,
@@ -44,7 +41,6 @@ class EditProfileState extends State<EditProfile> {
           ),
 
           SizedBox(height: 50.0,),
-
           TextField(style: TextStyle(color: Color(0xff000000),),
             decoration: InputDecoration(hintText: "Enter Address ",
               filled: true,
@@ -55,7 +51,6 @@ class EditProfileState extends State<EditProfile> {
           ),
 
           SizedBox(height: 50.0,),
-
           TextField(style: TextStyle(color: Color(0xff000000)),
             decoration: InputDecoration(hintText: "Enter Phone Number ",
               filled: true,
@@ -66,14 +61,12 @@ class EditProfileState extends State<EditProfile> {
           ),
 
           SizedBox(height: 50.0,),
-
           MaterialButton(color: Color(0xff1DA1F2) ,child: Text('Confirm'),
-             onPressed: () {
-            Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Profile() ), );
+                onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Profile() ), );
             },),
 
-          SizedBox(height: 50.0,),
         ]),
         ]
       ),
