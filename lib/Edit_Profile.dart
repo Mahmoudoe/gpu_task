@@ -10,8 +10,6 @@ class EditProfile extends StatefulWidget {
 }
 class EditProfileState extends State<EditProfile> {
 
-  //PickedFile img = ImagePicker().getImage(source: ); ;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +18,10 @@ class EditProfileState extends State<EditProfile> {
       body: ListView(children: [
         Column(children: [
           SizedBox(height: 50.0,),
-          MaterialButton(onPressed: (){},
+          MaterialButton(onPressed: (){
+            ImagePicker().getImage(source: ImageSource.gallery);
+                },
+            //ImagePicker().getImage(source: ImageSource.camera);
             child: CircularProfileAvatar(null,
               child: FlutterLogo(),
               borderWidth: 2.5,
