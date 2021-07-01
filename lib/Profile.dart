@@ -17,14 +17,14 @@ class ProfileState extends State<Profile> {
   String iD = "2991012100832";
 
   bool boolName = false ;
-  bool booladdress = false ;
-  bool boolmail = false ;
-  bool boolphone = false ;
+  bool boolAddress = false ;
+  bool boolMail = false ;
+  bool boolPhone = false ;
 
-  final TextEditingController namecontroller = TextEditingController() ;
-  final TextEditingController addresscontroller = TextEditingController() ;
-  final TextEditingController mailcontroller = TextEditingController() ;
-  final TextEditingController phonenumcontroller = TextEditingController() ;
+  final TextEditingController nameController = TextEditingController() ;
+  final TextEditingController addressController = TextEditingController() ;
+  final TextEditingController mailController = TextEditingController() ;
+  final TextEditingController phoneNumController = TextEditingController() ;
 
 
 
@@ -39,7 +39,12 @@ class ProfileState extends State<Profile> {
             onPressed: () {
               ImagePicker().getImage(source: ImageSource.gallery);
             },
-          ),],
+          ),TextButton( child: Text("Cancel ",),
+              style: TextButton.styleFrom(
+                textStyle:TextStyle(fontSize: 15,fontWeight:FontWeight.bold,
+                    color:Color(0xff1DA1F2)),
+              ),
+              onPressed:(){Navigator.of(context, rootNavigator: true).pop(context);} )],
         );
       },
     );
@@ -68,22 +73,7 @@ class ProfileState extends State<Profile> {
         Center(child: Stack(alignment: AlignmentDirectional.bottomEnd,
           children: [MaterialButton(onPressed: (){
 
-
-
             _showMyDialog();
-
-             AlertDialog(
-                  content: Image.asset("Images/CAD_9876.JPG"),
-                 actions: [IconButton(icon:Icon(Icons.edit,), iconSize:45.0,
-                  onPressed: () {
-                    ImagePicker().getImage(source: ImageSource.gallery);
-                  },
-                ),],
-               );
-
-
-
-
 
           },
               child: CircularProfileAvatar(null,child: FlutterLogo(),
@@ -143,8 +133,8 @@ class ProfileState extends State<Profile> {
                               });
                             else
                               setState(() {
-                                if (namecontroller.text != '')
-                                  name = namecontroller.text;
+                                if (nameController.text != '')
+                                  name = nameController.text;
                                 boolName = false ;
                               });
                           },),
@@ -158,7 +148,7 @@ class ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.all(Radius.circular(10.0),),
                         ),
                       ),
-                         controller: namecontroller,
+                         controller: nameController,
                     ),),
                   ],
                 ),
@@ -184,20 +174,20 @@ class ProfileState extends State<Profile> {
                                 color:Color(0xff1DA1F2)),
                           ),
                           onPressed: () {
-                            if (booladdress== false)
+                            if (boolAddress== false)
                               setState(() {
-                                booladdress = true ;
+                                boolAddress = true ;
                               });
                             else
                               setState(() {
-                                if (addresscontroller.text != '')
-                                  address = addresscontroller.text;
-                                booladdress = false ;
+                                if (addressController.text != '')
+                                  address = addressController.text;
+                                boolAddress = false ;
                               });
                           },),
                       ],
                     ),
-                    Visibility(visible: booladdress,child:
+                    Visibility(visible: boolAddress,child:
                       TextField(style: TextStyle(color: Color(0xff000000),),
                         decoration: InputDecoration(hintText: "Enter Address ",
                         filled: true,
@@ -205,7 +195,7 @@ class ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.all(Radius.circular(10.0),),
                         ),
                       ),
-                        controller: addresscontroller,
+                        controller: addressController,
                     ),),
                   ],
                 ),
@@ -231,20 +221,20 @@ class ProfileState extends State<Profile> {
                                 color:Color(0xff1DA1F2)),
                           ),
                           onPressed: () {
-                            if (boolmail== false)
+                            if (boolMail== false)
                               setState(() {
-                                boolmail = true ;
+                                boolMail = true ;
                               });
                             else
                               setState(() {
-                                if (mailcontroller.text != '')
-                                  mail = mailcontroller.text;
-                                boolmail = false ;
+                                if (mailController.text != '')
+                                  mail = mailController.text;
+                                boolMail = false ;
                               });
                           },),
                       ],
                     ),
-                    Visibility(visible: boolmail,child:
+                    Visibility(visible: boolMail,child:
                       TextField(style: TextStyle(color: Color(0xff000000),),
                         decoration: InputDecoration(hintText: "Enter Mail ",
                         filled: true,
@@ -252,7 +242,7 @@ class ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.all(Radius.circular(10.0),),
                         ),
                       ),
-                        controller: mailcontroller,
+                        controller: mailController,
                     ),),
                   ],
                 ),
@@ -278,20 +268,20 @@ class ProfileState extends State<Profile> {
                                 color:Color(0xff1DA1F2)),
                           ),
                           onPressed: () {
-                          if (boolphone== false)
+                          if (boolPhone== false)
                             setState(() {
-                              boolphone = true ;
+                              boolPhone = true ;
                             });
                           else
                             setState(() {
-                              if (phonenumcontroller.text != '')
-                                phoneNum = phonenumcontroller.text;
-                              boolphone = false ;
+                              if (phoneNumController.text != '')
+                                phoneNum = phoneNumController.text;
+                              boolPhone = false ;
                             });
                           },),
                       ],
                     ),
-                    Visibility(visible: boolphone,child:
+                    Visibility(visible: boolPhone,child:
                       TextField(style: TextStyle(color: Color(0xff000000),),
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(hintText: "Enter PhoneNumber ",
@@ -300,7 +290,7 @@ class ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.all(Radius.circular(10.0),),
                         ),
                       ),
-                        controller: phonenumcontroller,
+                        controller: phoneNumController,
                     ),),
                   ],
                 ),
